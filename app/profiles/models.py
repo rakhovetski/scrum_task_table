@@ -8,6 +8,7 @@ from app.database import Base
 
 if TYPE_CHECKING:
     from app.projects.models import Project
+    from app.projects.problems.models import Problem
 
 
 class Profile(Base):
@@ -20,8 +21,11 @@ class Profile(Base):
     hashed_password: Mapped[str] = mapped_column(nullable=False)
     is_admin: Mapped[bool] = mapped_column(default=False)
 
-    projects: Mapped[list['Project']] = relationship(
+    projects: Mapped['Project'] = relationship(
         back_populates='profiles',
         secondary='project_profiles'
+    )
+    problems: Mapped['Problem'] = relationship(
+        back_populates='profile'
     )
 

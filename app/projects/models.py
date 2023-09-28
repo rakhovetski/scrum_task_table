@@ -29,10 +29,10 @@ class Project(Base):
     description: Mapped[str] = mapped_column()
     created_at: Mapped[date] = mapped_column(default=date.today())
 
-    profiles: Mapped[list['Profile']] = relationship(
+    profiles: Mapped['Profile'] = relationship(
         back_populates='projects',
         secondary='project_profiles'
     )
     problems: Mapped[list['Problem']] = relationship(
-        back_populates='profile'
+        back_populates='project'
     )

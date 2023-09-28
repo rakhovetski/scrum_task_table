@@ -10,6 +10,7 @@ from app.database import Base
 
 if TYPE_CHECKING:
     from app.profiles.models import Profile
+    from app.projects.models import Project
 
 
 class TaskType(Enum):
@@ -31,5 +32,8 @@ class Problem(Base):
     project_id: Mapped[int] = mapped_column(ForeignKey('projects.id'), nullable=False)
 
     profile: Mapped['Profile'] = relationship(
+        back_populates='problems'
+    )
+    project: Mapped['Project'] = relationship(
         back_populates='problems'
     )
