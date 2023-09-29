@@ -25,10 +25,10 @@ class Problem(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     title: Mapped[str] = mapped_column(String(70), nullable=False)
-    description: Mapped[str] = mapped_column()
-    task_type: Mapped[TaskType] = mapped_column(default=TaskType.NA)
-    hard_level: Mapped[int] = mapped_column()
-    profile_id: Mapped[int] = mapped_column(ForeignKey('profiles.id'))
+    description: Mapped[str] = mapped_column(nullable=True)
+    task_type: Mapped[TaskType] = mapped_column(default=TaskType.NA, nullable=True)
+    hard_level: Mapped[int] = mapped_column(nullable=True)
+    profile_id: Mapped[int] = mapped_column(ForeignKey('profiles.id'), nullable=True)
     project_id: Mapped[int] = mapped_column(ForeignKey('projects.id'), nullable=False)
 
     profile: Mapped['Profile'] = relationship(

@@ -26,8 +26,8 @@ class Project(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     title: Mapped[str] = mapped_column(String(60), nullable=False)
-    description: Mapped[str] = mapped_column()
-    created_at: Mapped[date] = mapped_column(default=date.today())
+    description: Mapped[str] = mapped_column(nullable=True)
+    created_at: Mapped[date] = mapped_column(default=date.today(), nullable=True)
 
     profiles: Mapped['Profile'] = relationship(
         back_populates='projects',

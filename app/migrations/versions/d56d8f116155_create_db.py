@@ -1,8 +1,8 @@
-"""Create base models
+"""Create db
 
-Revision ID: 704085c09267
+Revision ID: d56d8f116155
 Revises: 
-Create Date: 2023-09-28 20:53:29.908247
+Create Date: 2023-09-29 22:56:04.938121
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '704085c09267'
+revision: str = 'd56d8f116155'
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -32,17 +32,17 @@ def upgrade() -> None:
     op.create_table('projects',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('title', sa.String(length=60), nullable=False),
-    sa.Column('description', sa.String(), nullable=False),
-    sa.Column('created_at', sa.Date(), nullable=False),
+    sa.Column('description', sa.String(), nullable=True),
+    sa.Column('created_at', sa.Date(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('problems',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('title', sa.String(length=70), nullable=False),
-    sa.Column('description', sa.String(), nullable=False),
-    sa.Column('task_type', sa.Enum('NA', 'AC', 'RW', 'CM', name='tasktype'), nullable=False),
-    sa.Column('hard_level', sa.Integer(), nullable=False),
-    sa.Column('profile_id', sa.Integer(), nullable=False),
+    sa.Column('description', sa.String(), nullable=True),
+    sa.Column('task_type', sa.Enum('NA', 'AC', 'RW', 'CM', name='tasktype'), nullable=True),
+    sa.Column('hard_level', sa.Integer(), nullable=True),
+    sa.Column('profile_id', sa.Integer(), nullable=True),
     sa.Column('project_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['profile_id'], ['profiles.id'], ),
     sa.ForeignKeyConstraint(['project_id'], ['projects.id'], ),
