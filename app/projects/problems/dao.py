@@ -1,13 +1,14 @@
+from typing import Optional
 from sqlalchemy import and_, delete, select, update
 
 from app.base.dao import BaseDAO
 from app.database import async_session_maker
-from app.projects.problems.models import Problem
+from app.projects.problems.models import Problem, TaskType
 
 
 class ProblemDAO(BaseDAO):
     model = Problem
-
+        
 
     @classmethod
     async def find_problems_by_project_id_and_problem_id(cls,

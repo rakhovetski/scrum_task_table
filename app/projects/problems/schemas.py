@@ -7,6 +7,8 @@ from app.projects.problems.models import TaskType
 class SProblemMinReturn(BaseModel):
     id: int
     title: str
+    task_type: Optional[TaskType] = Field(TaskType.NA)
+    hard_level: Optional[int] = Field(None, ge=1, le=10)
 
 
 class SProblemDetailReturn(BaseModel):
