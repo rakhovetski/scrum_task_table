@@ -1,5 +1,6 @@
 from typing import Optional
 from fastapi import APIRouter, Body, Depends, Path, Query
+from app.profiles.schemas import SProfileMinReturn
 
 from app.projects.dao import ProjectDAO
 from app.projects.problems.dao import ProblemDAO
@@ -55,5 +56,5 @@ async def get_problems_by_project_id(project_id: int = Path(..., ge=0),
 
 
 @router.get('/{project_id}/profiles')
-async def get_profiles_by_project_id(project_id: int = Path(..., ge=0)):
+async def get_profiles_by_project_id(project_id: int = Path(..., ge=0)) -> list[SProfileMinReturn]:
     return await ProjectDAO.find_profiles_by_project_id(project_id)
