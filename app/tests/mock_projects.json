@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Python FastAPI",
+        "description": "Some Description"
+    },
+    {
+        "title": "Django Project",
+        "description": "Some Description"
+    },
+    {
+        "title": "Java Project",
+        "description": ""
+    }
+]

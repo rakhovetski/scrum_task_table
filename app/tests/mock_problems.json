@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Create database model",
+        "description": "Some description", 
+        "task_type": "Not Active",
+        "hard_level": 10,
+        "profile_id": 1,
+        "project_id": 1
+    },
+    {
+        "title": "Create API tests",
+        "description": "Some description", 
+        "task_type": "Completed",
+        "hard_level": 4,
+        "profile_id": 2,
+        "project_id": 1
+    },
+    {
+        "title": "Create new feature",
+        "description": "", 
+        "task_type": "",
+        "hard_level": 1,
+        "profile_id": null,
+        "project_id": 1
+    },
+    {
+        "title": "Append celery tasks",
+        "description": "New tasks", 
+        "task_type": "Active",
+        "hard_level": 7,
+        "profile_id": 2,
+        "project_id": 2
+    },
+    {
+        "title": "Append redis",
+        "description": "Append redis", 
+        "task_type": "Active",
+        "hard_level": 10,
+        "profile_id": 1,
+        "project_id": 2
+    },
+    {
+        "title": "Sptring Base Model",
+        "description": "Description", 
+        "task_type": "Active",
+        "hard_level": 10,
+        "profile_id": 3,
+        "project_id": 3
+    }
+]

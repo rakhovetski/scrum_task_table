@@ -1,0 +1,26 @@
+[
+    {
+        "project_id": 1,
+        "profile_id": 1,
+        "role": "Backend",
+        "is_creator": true
+    },
+    {
+        "project_id": 1,
+        "profile_id": 2,
+        "role": "DevOps",
+        "is_creator": null
+    },
+    {
+        "project_id": 1,
+        "profile_id": 2,
+        "role": "Frontend",
+        "is_creator": true
+    },
+    {
+        "project_id": 3,
+        "profile_id": 3,
+        "role": "Backend",
+        "is_creator": true
+    }
+]
